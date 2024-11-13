@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute: "/login",
+      initialRoute: "/home",
 
       // Define your named routes
       routes: {
