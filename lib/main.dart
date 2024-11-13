@@ -3,7 +3,7 @@ import 'pages/login_page.dart';
 import 'pages/pages.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,24 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Define the initial route
-      initialRoute: "/",
-      
+      // Define the initial route correctly
+
       // Theme settings
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.light, // Use light mode only
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      darkTheme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.green,
-      ),
-      
-      // Named routes
+      initialRoute: "/login",
+
+      // Define your named routes
       routes: {
         "/": (context) => LoginPage(),
-        "/HomePage": (context) => HomePage(),
-        "/login": (context) => LoginPage(), // Ensure the class name starts with an uppercase letter
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
       },
     );
   }
