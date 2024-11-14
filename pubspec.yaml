@@ -62,6 +62,8 @@ flutter:
   assets:
     - assets/images/gpay.png
     - assets/images/google.png
+    - assets/images/spotify.png
+    - assests/images/joker.png
 
   #   - images/a_dot_ham.jpeg
 

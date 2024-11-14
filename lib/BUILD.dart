@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/login_page.dart';
-import 'pages/pages.dart';
+import 'pages/pages.dart'; // Make sure you have HomePage defined here
 
 void main() {
   runApp(const MyApp());
@@ -12,21 +12,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Define the initial route correctly
+      title: 'My Flutter App',
 
       // Theme settings
-      themeMode: ThemeMode.light, // Use light mode only
+      themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute: "/home",
 
-      // Define your named routes
+      // Set the initial route to '/login'
+      initialRoute: "/login",
+
+      // Define named routes
       routes: {
-        "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        "/login": (context) =>  LoginPage(),
+        "/home": (context) =>  HomePage(),
       },
+
+      // Hide the debug banner
+      debugShowCheckedModeBanner: false,
     );
   }
 }
