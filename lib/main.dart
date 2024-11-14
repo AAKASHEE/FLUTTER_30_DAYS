@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart'; // <-- Add this import for system UI customization
 
-void main() => runApp(MyApp());
+import 'pages/login_page.dart';
+import 'pages/home_page.dart';
+
+void main() {
+  // Set system UI overlay style to black for status and navigation bars
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.black, // Make the status bar black
+      statusBarIconBrightness: Brightness.light, // Light icons for status bar
+      systemNavigationBarColor: Colors.black, // Make navigation bar black
+      systemNavigationBarIconBrightness:
+          Brightness.light, // Light icons for navigation bar
+    ),
+  );
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,39 +27,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment:
-                MainAxisAlignment.center, // Centers the image vertically
-            children: [
-              // Displaying the GPay Image
-              Image.asset(
-                'assets/images/joker.png', // Path to your image
-                height: 400,
-                width: 200,
-                fit: BoxFit.contain,
-              ),
-              // Adding Spacer to push the "Google" text down
-              // Takes up remaining space
-              SizedBox(
-                  height:
-                      200), // Adjust this value to control how much higher the text is
-              // Google Text positioned slightly above the bottom
-              Text(
-                'Google',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: const Color.fromARGB(255, 181, 180, 180),
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        ),
+      // debugShowCheckedModeBanner: false, // Hide debug banner
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.ptSans().fontFamily,
       ),
+
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const LoginPage(),
+        "/h": (context) => const HomePage(),
+        "/l": (context) => const LoginPage(),
+      },
     );
   }
 }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'pages/login_page.dart';
-import 'pages/pages.dart'; // Make sure you have HomePage defined here
 
-void main() {
-  runApp(const MyApp());
-}
+import 'package:google_fonts/google_fonts.dart';
+
+import 'pages/login_page.dart';
+import 'pages/home_page.dart';
+
+runApp(MyApp()) {}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,25 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Flutter App',
-
-      // Theme settings
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-        primarySwatch: Colors.green,
+          primarySwatch: Colors.blue,
+          primaryTextTheme: GoogleFonts.latoTextTheme()),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
       ),
-
-      // Set the initial route to '/login'
-      initialRoute: "/login",
-
-      // Define named routes
+      initialRoute: "/",
       routes: {
-        "/login": (context) =>  LoginPage(),
-        "/home": (context) =>  HomePage(),
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
       },
-
-      // Hide the debug banner
-      debugShowCheckedModeBanner: false,
     );
   }
 }
