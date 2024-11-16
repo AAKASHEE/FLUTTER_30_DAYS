@@ -12,16 +12,18 @@ class LoginPage extends StatelessWidget {
             MainAxisAlignment.center, // Center the column vertically
         children: [
           Image.asset('assets/images/joker.png',
-              width: 300, height: 300, fit: BoxFit.contain),
+              width: 500, height: 500, fit: BoxFit.fill),
           SizedBox(
-              height: 20.0,
+              height: 25.0,
               child: Text(
-                "NEVERTHELESS ",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                "NEVERTHELESS",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900),
               )),
           Text(
-            "Welcome AAKASHEE",
+            "      Welcome AAKASHEE",
             style: TextStyle(
               fontSize: 30,
               color: Colors.white,
@@ -31,7 +33,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 20.0),
           Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                const EdgeInsets.symmetric(vertical: 30.0, horizontal: 60.0),
             child: Column(
               children: [
                 TextFormField(
@@ -42,7 +44,7 @@ class LoginPage extends StatelessWidget {
                     labelText: "Username",
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 TextFormField(
                   obscureText: true, // For password input
                   style: TextStyle(color: Colors.white),
