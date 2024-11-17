@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
             MainAxisAlignment.center, // Center the column vertically
         children: [
           Image.asset('assets/images/joker.png',
-              width: 500, height: 500, fit: BoxFit.fill),
+              width: 580, height: 580, fit: BoxFit.contain),
           SizedBox(
               height: 25.0,
               child: Text(
@@ -58,7 +58,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    print("Hi AAKASHEE");
+                    print("Hi AAKAShEE");
                   },
                   style: TextButton.styleFrom(),
                   child: Text("login"),
